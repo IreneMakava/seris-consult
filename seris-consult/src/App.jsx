@@ -12,8 +12,7 @@ import Quality from './pages/quality';
 import HumanResource from './pages/humanResource';
 import Events from './pages/events';
 import Training from './pages/training';
-import Strategic from './pages/strategic';  
-
+import Strategic from './pages/strategic'; 
 function App() {
   return (
     <BrowserRouter>

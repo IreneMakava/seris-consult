@@ -63,7 +63,7 @@ export default function Navbar() {
               component="img"
               src={logo} // replace with your actual logo path
               alt="Seris Consult logo"
-              sx={{ height: 40, cursor: "pointer", backgroundColor: 'whitesmoke', px:1}}
+              sx={{ height: 50, cursor: "pointer", backgroundColor: 'whitesmoke', px:1}}
             />
           </Box>
 
