@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react'; // (if using React)
-
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [
-    react(), // (if using React)
-  ]
-  
+  plugins: [react()],
+  build: {
+    outDir: 'dist', // Vercel looks for this by default
+    rollupOptions: {
+      input: './index.html' // Explicit entry point
+    }
+  }
 });
