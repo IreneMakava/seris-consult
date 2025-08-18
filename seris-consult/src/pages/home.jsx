@@ -9,11 +9,12 @@ export default function Home() {
     position: "relative",
     py: { xs: 6, md: 10 },
     px: { xs: 2, md: 8 },
+    marginRight: 0,
     backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 70%), url(${bgImg})`,
-    backgroundSize: { xs: "contain", md: "cover" }, // responsive background scaling
+    backgroundSize: "cover", // responsive background scaling
     backgroundPosition: { xs: "top center", md: "right center" },
     backgroundRepeat: "no-repeat",
-    minHeight: { xs: "60vh", md: "80vh" }, // smaller height on phones
+    minHeight: { xs: "60h", sm: "70vh", md: "80vh" }, // smaller height on phones
   }}
     >
       <Grid container spacing={4} alignItems="center">
