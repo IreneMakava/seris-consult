@@ -13,6 +13,8 @@ import HumanResource from './pages/humanResource';
 import Events from './pages/events';
 import Training from './pages/training';
 import Strategic from './pages/strategic'; 
+import './App.css';
+
 function App() {
   return (
     <BrowserRouter>
@@ -26,10 +28,16 @@ function App() {
             <>
 
               <Home />
+              <div id="about">
               <AboutUs />
-              <OurServices />
-              <Footer />
-            </>
+              </div>
+              <div id="services">
+                <OurServices />
+              </div>
+              <div id="footer">
+                <Footer />
+              </div>
+   </>
           }
         />
         {/* Individual pages */}

@@ -1,25 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
-  plugins:  [
-  react({
-    jsxImportSource: '@emotion/react', // Better Emotion support
-    babel: {
-      plugins: ['@emotion/babel-plugin'] // Optimized MUI styles
-    }
-  })
-],
+  plugins: [react()],
   base: '/',
   build: {
-  rollupOptions: {
-    external: ['react', 'react-dom'], // Only externalize these if needed
-    output: {
-      globals: {
-        react: 'React', // Only needed for CDN loading
-        'react-dom': 'ReactDOM'
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html') // Explicitly point to index.html
       }
     }
   }
-}
 });

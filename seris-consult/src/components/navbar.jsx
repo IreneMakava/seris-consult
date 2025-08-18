@@ -9,41 +9,20 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import Collapse from "@mui/material/Collapse";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import logo from '../assets/logo.png'
-
-const services = [
-  { name: "Project Management", path: "/project-management" },
-  { name: "Strategic Plans", path: "/strategic" },
-  { name: "Business Plans", path: "/business" },
-  { name: "Budgeting", path: "/budget" },
-  { name: "Monitoring and Evaluation", path: "/mEvaluation" },
-  { name: "Quality Management Systems", path: "/quality" },
-  { name: "Human Resource Management", path: "/humanResource" },
-  { name: "Events Management", path: "/events" },
-  { name: "Training Programs", path: "/training" },
-];
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const [anchorElServices, setAnchorElServices] = React.useState(null);
-  const openServices = Boolean(anchorElServices);
-  const handleServicesOpen = (e) => setAnchorElServices(e.currentTarget);
-  const handleServicesClose = () => setAnchorElServices(null);
-
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
   const toggleDrawer = (open) => () => setDrawerOpen(open);
 
   return (
@@ -58,12 +37,17 @@ export default function Navbar() {
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* Logo / Brand */}
-          <Box component={Link} to="/" aria-label="Home" sx={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+          <Box
+            component={Link}
+            to="/"
+            aria-label="Home"
+            sx={{ display: "flex", alignItems: "center", textDecoration: "none" }}
+          >
             <Box
               component="img"
-              src={logo} // replace with your actual logo path
+              src={logo}
               alt="Seris Consult logo"
-              sx={{ height: 50, cursor: "pointer", backgroundColor: 'whitesmoke', px:1}}
+              sx={{ height: 50, cursor: "pointer", backgroundColor: "whitesmoke", px: 1 }}
             />
           </Box>
 
@@ -73,24 +57,19 @@ export default function Navbar() {
               <Button color="inherit" component={Link} to="/">
                 Home
               </Button>
-              <Button color="inherit" component={Link} to="/aboutUs">
+              {/* Anchor scroll instead of route */}
+              <Button color="inherit" href="#about">
                 About Us
               </Button>
-
-              {/* Services dropdown */}
-              <Button
-                color="inherit" component={Link} to="/ourServices"
-              >
+              <Button color="inherit" href="#services">
                 Our Services
               </Button>
-              
-              <Button color="inherit" component={Link} to="#footer">
+              <Button color="inherit" href="#footer">
                 Contact
               </Button>
               <Button
                 variant="contained"
-                component={Link}
-                to="#footer"
+                href="#footer"
                 sx={{
                   ml: 1,
                   backgroundColor: "#d93f1a", // chili red CTA
@@ -120,14 +99,16 @@ export default function Navbar() {
             <ListItemButton component={Link} to="/" onClick={toggleDrawer(false)}>
               <ListItemText primary="Home" />
             </ListItemButton>
-            <ListItemButton component={Link} to="/aboutUs" onClick={toggleDrawer(false)}>
+            {/* Anchor links for sections */}
+            <ListItemButton component="a" href="#about" onClick={toggleDrawer(false)}>
               <ListItemText primary="About Us" />
             </ListItemButton>
-
-            <ListItemButton component={Link} to="/ourServices" onClick={toggleDrawer(false)}>
+            <ListItemButton component="a" href="#services" onClick={toggleDrawer(false)}>
               <ListItemText primary="Our Services" />
             </ListItemButton>
-            
+            <ListItemButton component="a" href="#footer" onClick={toggleDrawer(false)}>
+              <ListItemText primary="Contact" />
+            </ListItemButton>
           </List>
           <Divider sx={{ my: 1 }} />
           <Box sx={{ mt: 1, px: 1 }}>

@@ -131,7 +131,7 @@ export default function Services() {
               </Typography>
               <Typography
                 variant="body1"
-                style={{ color: "#555", fontSize: "14px" }}
+                style={{ color: "black", fontSize: "14px" }}
               >
                 {service.description}
               </Typography>
