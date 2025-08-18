@@ -13,7 +13,7 @@ export default function Home() {
     backgroundSize: { xs: "contain", md: "cover" }, // responsive background scaling
     backgroundPosition: { xs: "top center", md: "right center" },
     backgroundRepeat: "no-repeat",
-    minHeight: { xs: "70vh", md: "100vh" }, // smaller height on phones
+    minHeight: { xs: "60vh", md: "80vh" }, // smaller height on phones
   }}
     >
       <Grid container spacing={4} alignItems="center">
